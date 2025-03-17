@@ -43,11 +43,6 @@ Kirigami.FormLayout {
 		}
 	}
 
-	LibConfig.CheckBox {
-		configKey: "showBackground"
-		text: i18n("Desktop Widget: Show background")
-	}
-
     Item {
         Kirigami.FormData.isSection: true
         Kirigami.FormData.label: i18n("Note: 'wetter.com' server does not provide the current temperature, for this use other servers such as BBC")
