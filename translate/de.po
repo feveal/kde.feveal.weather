@@ -1,10 +1,10 @@
-# Translation of simpleweather in es
-# Copyright (C) 2019
-# This file is distributed under the same license as the simpleweather package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation of Weather Baro in de
+# Copyright (C) 2024
+# This file is distributed under the same license as the Weather Baro package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024 YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: com.baro-plasma\n"
+"Project-Id-Version: kde.feveal.weather\n"
 "Report-Msgid-Bugs-To: feveal@hotmail.com"
 "POT-Creation-Date: 2024-01-21 13:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -23,23 +23,23 @@ msgstr ""
 
 #: ../contents/ui/Main.qml
 msgid "Refresh"
-msgstr "Refrescar"
+msgstr "Aktualisierung"
 
 #: ../contents/ui/CurrentWeatherView.qml
 msgid "Updated at %1"
-msgstr "Actualizado a las %1"
+msgstr "Aktualisiert unter %1"
 
 #: ../contents/ui/libweather/ConfigWeatherStationPicker.qml
 msgid "Choose"
-msgstr "Elegir"
+msgstr "Wählen"
 
 #: ../contents/ui/libweather/WeatherStationPickerDialog.qml
 msgid "Select Weather Station"
-msgstr "Seleccionar estación meteorológica"
+msgstr "Wählen Sie Wetterstation"
 
 #: ../contents/ui/libweather/WeatherStationPickerDialog.qml
 msgid "Select"
-msgstr "Seleccionar"
+msgstr "Wählen"
 
 #: ../contents/ui/libweather/WeatherStationPickerDialog.qml
 msgid "Cancel"
@@ -47,131 +47,131 @@ msgstr "Cancelar"
 
 #: ../contents/ui/libweather/WeaterData.qml
 msgid "Wind:"
-msgstr "Viento:"
+msgstr "Wind:"
 
 #: ../contents/ui/libweather/WeaterData.qml
 msgid "Windchill:"
-msgstr "Baja sensación térmica:"
+msgstr "Windchill:"
 
 #: ../contents/ui/libweather/WeaterData.qml
 msgid "Short for tonight"
-msgstr "Frío por la noche"
+msgstr "Nachts kalt"
 
 #: ../contents/ui/libweather/WeaterData.qml
 msgid "nite"
-msgstr "noche"
+msgstr "nacht"
 
 #: ../contents/ui/libweather/WeaterData.qml
 msgid "certain weather condition"
-msgstr "condiciones climaticas"
+msgstr "bestimmte Wetterbedingungen"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Update every:"
-msgstr "Actualizar cada:"
+msgstr "Aktualisieren Sie alle:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show weather details"
-msgstr "Ver detalles"
+msgstr "Wetterdetails anzeigen"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show weather warnings"
-msgstr "Ver Alertas Meteorológicas:"
+msgstr "Wetterwarnungen anzeigen"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Note: 'wetter.com' server does not provide the current temperature, for this use other servers such as BBC"
-msgstr "Nota: El servidor 'wetter.com' no proporciona la temperatura actual. Utilice otro servidor como BBC"
+msgstr "Hinweis: Der Server 'wetter.com' stellt die aktuelle Temperatur nicht bereit. Verwenden Sie hierfür andere Server wie BBC"
 
 #: ../contents/config/config.qml
 msgctxt "@title"
 msgid "Font Appearance"
-msgstr "Apariencia de Fuentes"
+msgstr "Schriftdarstellung"
 
 #: ../contents/config/config.qml
 msgctxt "@title"
 msgid "Units"
-msgstr "Unidades"
+msgstr "Einheiten"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Font Family:"
-msgstr "Familia de Fuente"
+msgstr "Schriftfamilie"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Forecast:"
-msgstr "Predicción:"
+msgstr "Vorhersage:"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Temp:"
-msgstr "Temperatura:"
+msgstr "Temperatur:"
 
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Date:"
-msgstr "Fecha:"
+msgstr "Datum:"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Details:"
-msgstr "Detalles:"
+msgstr "Einzelheiten:"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Text Color:"
-msgstr "Color de Texto:"
+msgstr "Textfarbe:"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Outline:"
-msgstr "Borde de carácter:"
+msgstr "Zeichengrenze:"
 
 #: ../contents/ui/config/libweather/ConfigUnits.qml
 msgid "Temperature:"
-msgstr "Temperatura:"
+msgstr "Temperatur:"
 
 #: ../contents/ui/config/libweather/ConfigUnits.qml
 msgid "Pressure:"
-msgstr "Presión:"
+msgstr "Luftdruck:"
 
 #: ../contents/ui/config/libweather/ConfigUnits.qml
 msgid "Wind speed:"
-msgstr "Velocidad del Viento:"
+msgstr "Windgeschwindigkeit:"
 
 #: ../contents/ui/config/libweather/ConfigUnits.qml
 msgid "Visibility:"
-msgstr "Visibilidad:"
+msgstr "Sichtweite:"
 
 #: ../contents/ui/moon/Moon.qml
 msgid " Lightning: "
-msgstr " Iliminacion: "
+msgstr " Blitz: "
 
 #: ../contents/ui/moon/Moon.qml
 msgid " days for "
-msgstr " dias para "
+msgstr " tage für "
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Full Moon"
-msgstr "Luna llena"
+msgstr "Vollmond"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "New Moon"
-msgstr "Luna nueva"
+msgstr "Neumond"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "First Quarter"
-msgstr "Cuarto creciente"
+msgstr "letztes Quartal"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Last Quarter"
-msgstr "Cuarto menguante"
+msgstr "Letztes Quartal"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Waning Crescent"
-msgstr "Menguante"
+msgstr "Abnehmender Mond"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Waning Gibbous"
-msgstr "Creciente"
+msgstr "Halbmond"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Waxing Crescent"
-msgstr "Media Luna creciente"
+msgstr "Zunehmender Mond"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Waxing Gibbous"
-msgstr "Media Luna menguante"
+msgstr "Wachsender Gibbous"
