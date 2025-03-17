@@ -28,6 +28,8 @@ The Plasmoid is integrated  with the rest.
 Plasmoid for KDE Desktop
 
 (Version 1.3) This version adds new icons that were missing for some weather servers. Also some servers add text strings to image names which caused the image not to be found, this problem has been fixed.
+Some servers provide differentiated data between day and night. Some images
+that used to appear with the sun at night have been added. Now they appear with the moon. 
 
 (Version 1.2) This version fixes some minor bugs that appear on console. Also added a refresher for lunar data.
 
