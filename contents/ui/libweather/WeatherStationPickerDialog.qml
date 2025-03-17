@@ -28,7 +28,7 @@ Window {
 	width: Kirigami.Units.gridUnit * 25
 	height: Kirigami.Units.gridUnit * 20
 
-	title: i18ndc("plasma_applet_org.kde.plasma.weather", "@title:window", "Select Weather Station")
+	title: i18n("Select Weather Station")
 	color: syspal.window
 
 	property alias providers: stationPicker.providers
@@ -90,14 +90,14 @@ Window {
 			QQC2.Button {
 				enabled: !!source
 				icon.name: "dialog-ok"
-				text: i18ndc("plasma_applet_org.kde.plasma.weather", "@action:button", "Select")
+				text: i18n("Select")
 				onClicked: {
 					acceptAction.trigger();
 				}
 			}
 			QQC2.Button {
 				icon.name: "dialog-cancel"
-				text: i18ndc("plasma_applet_org.kde.plasma.weather", "@action:button", "Cancel")
+				text: i18n("Cancel")
 				onClicked: {
 					cancelAction.trigger();
 				}

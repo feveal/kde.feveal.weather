@@ -53,7 +53,7 @@ RowLayout {
 		id: selectButton
 		Layout.fillWidth: true
 		icon.name: "find-location"
-		text: i18ndc("plasma_applet_org.kde.plasma.weather", "@action:button", "Choose…")
+		text: i18n("Choose")
 		onClicked: stationPicker.visible = true
 	}
 }
