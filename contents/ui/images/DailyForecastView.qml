@@ -17,14 +17,26 @@ GridLayout {
     rowSpacing: PlasmaCore.Units.smallSpacing
 
     //--- Function to sanitize icon names
-    function sanitizeIconName(iconName) {
-        if (iconName.endsWith("-day")) {
-            return iconName.slice(0, -4); // Remove "-day"
-        } else if (iconName.endsWith("-night")) {
-            return iconName.slice(0, -6); // Remove "-night"
-        }
-        return iconName; // Return unchanged if no suffix
-    }
+                function sanitizeIconName(iconName) {
+                    // Lista de iconos que deben mantener el sufijo '-night'
+                    const nightIcons = [
+                        "weather-clear-night",
+                        "weather-clear-wind-night",
+                        "weather-clouds-night",
+                        "weather-few-clouds-night"
+                    ];
+
+                    if (iconName.endsWith("-day")) {
+                        return iconName.slice(0, -4); // Eliminar '-day'
+                    } else if (iconName.endsWith("-night")) {
+                        if (nightIcons.includes(iconName)) {
+                            return iconName; // Mantener el sufijo '-night' para las excepciones
+                        } else {
+                            return iconName.slice(0, -6); // Eliminar '-night' para el resto
+                        }
+                    }
+                    return iconName; // Si no termina en '-day' o '-night', devolver tal cual
+                }
 
     // EnvCan has 2 day items for day/night, so we use 2 rows.
     readonly property int showNumDayItems: {
