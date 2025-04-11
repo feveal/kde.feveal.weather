@@ -2,7 +2,7 @@
 
 set -e  # Exit immediately if a command exits with a non-zero status
 
-PLASMOID_DIR="$HOME/.local/share/plasma/plasmoids/kde.feveal.meteo"
+PLASMOID_DIR="$HOME/.local/share/plasma/plasmoids/kde.feveal.weather"
 
 echo "[Installer] Creating plasmoid directory at: $PLASMOID_DIR"
 if mkdir -p "$PLASMOID_DIR"; then
