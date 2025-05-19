@@ -13,7 +13,7 @@ else
 fi
 
 echo "[Installer] Copying files..."
-if cp -r ./* "$PLASMOID_DIR/"; then
+if cp -r ./plasmoid/* "$PLASMOID_DIR/"; then
     echo "[Installer] Files copied successfully."
     echo "[Installer] ✅ Installation complete. The plasmoid should now appear in your widgets list."
 else
