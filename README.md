@@ -12,15 +12,17 @@ You can change the temperature units between Celsius, Fahrenheit and Kelvin. Als
 -
 
 ## Getting started:
-Unzip the file. Look in the unzipped folder the file "install_plasmoid.sh". Open the terminal in the folder where the file is located.
+1. **Unzip the downloaded archive.**
+2. Inside the unzipped folder, locate the file: `install_plasmoid.sh`.
+3. Give execute permissions for this file
+4. Open a terminal in that folder and run:
 
-Run in terminal "./install_plasmoid.sh"
-The Plasmoid is installed just like the rest. ".local/share/plasma/plasmoids/kde.feveal.weather/"
+   ```bash
+   ./install_plasmoid.sh
+   ```
+5. The plasmoid will be installed to: ".local/share/plasma/plasmoids/kde.feveal.weather/"
 
 Sometimes when resizing the plasmoid, the characters with the moon data do not appear correctly. Use the "restartplasma" file from the terminal by running "./restartplasma"
-
-> **[!Attention:]**
-> Check that the **"moon.zip"** file has been correctly unzipped to the destination path. They are images of phases of the moon. They have been put in a zip because the "opencode,net" server does not support files named with blank spaces.
 
 The Plasmoid is integrated  with the rest.
 

@@ -4,10 +4,10 @@ import Qt.labs.platform 1.0 as Platform
 
 Item {
     id: moon
-    opacity: 0.1
+    opacity: 0.01
     x: 110 * parentContainer.scaleFactor
     y: 270 * parentContainer.scaleFactor
-//Component.onCompleted: {console.log ("Hola")}
+
     Image {
         id: moonImage
         width: 40 * parentContainer.scaleFactor
@@ -17,7 +17,8 @@ Item {
         z: 2
         opacity: 1
 //        scale: moonData.state === "clicked" ? 3 : 0.5  // Reduce la escala cuando el estado es "clicked"
-		source: "../moon/" + moonComponent.moonPhase + ".png"
+//		source: "../moon/" + moonPhase + ".png"
+        source: "../moon/" + sanitizePhaseName(moonPhase) + ".png"
 
         MouseArea {
             id: mouseMoon
@@ -45,13 +46,7 @@ Item {
                 font.pixelSize: 4 * parentContainer.scaleFactor // Tamaño de la fuente
                 style: Text.Raised;  // Estilo del texto
                 styleColor: "white"  // Color del estilo del texto
-                text: {
-                    var moonphaseText = "";
-                    if (moonComponent.moonPhase !== undefined && moonComponent.moonPhase !== "") {
-                        moonphaseText += i18n(moonComponent.moonPhase);
-                    }
-                    return moonphaseText + "; " + i18n(" Lightning: ") + moonComponent.percentIlu + "%";
-                }
+                text: i18n(moonPhase) + i18n(" Lightning: ") + percentIlu + "%"
             }
         }
         Rectangle {
@@ -69,13 +64,7 @@ Item {
                 font.pixelSize: 4 * parentContainer.scaleFactor
                 style: Text.Raised;
                 styleColor: "white"
-                text: {
-                    var phaseText = moonComponent.daysPhase + i18n(" days for ");
-                    if (moonComponent.nextPhase !== undefined && moonComponent.nextPhase !== "") {
-                        phaseText += i18n(moonComponent.nextPhase);
-                    }
-                    return phaseText;
-                }
+                text: daysPhase + i18n(" days for ") + i18n(nextPhase)
             }
         }
     }
@@ -91,7 +80,7 @@ Item {
                     target: moon
                     scale: 3
                     opacity: 1
-                    x: -180 * parentContainer.scaleFactor // Posicion de luna
+                    x: -120 * parentContainer.scaleFactor
                     y: 40 * parentContainer.scaleFactor
                 }
             }
@@ -110,6 +99,7 @@ Item {
             }
         ]
     }
+
 //-------------------------
 
     Timer {
@@ -123,6 +113,11 @@ Item {
     }
 
 //-------------------------
+
+    // Replace " " by "_"
+    function sanitizePhaseName(phaseName) {
+        return phaseName.replace(/\s/g, "_");
+    }
 
 }
 
