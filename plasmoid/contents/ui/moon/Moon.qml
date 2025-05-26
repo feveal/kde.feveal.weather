@@ -5,44 +5,52 @@ import Qt.labs.platform 1.0 as Platform
 Item {
     id: moon
     opacity: 0.01
-    x: 110 * parentContainer.scaleFactor
-    y: 270 * parentContainer.scaleFactor
+    x: 110 * scaleFactor
+    y: 270 * scaleFactor
+    Item {
+        id: moonVisual
+        anchors.centerIn: parent
+        scale: 1.0
 
-    Image {
-        id: moonImage
-        width: 40 * parentContainer.scaleFactor
-        height: 40 * parentContainer.scaleFactor
-        x: 1
-        y: 2
-        z: 2
-        opacity: 1
-        source: "../moon/" + sanitizePhaseName(moonComponent.moonPhase) + ".png"
+        Image {
+            id: moonImage
+            width: 40 * scaleFactor
+            height: 40 * scaleFactor
+            x: 1
+            y: 2
+            z: 2
+            opacity: 1
+            source: "../moon/" + sanitizePhaseName(moonComponent.moonPhase) + ".png"
 
-        MouseArea {
-            id: mouseMoon
-            anchors.fill: parent
-            cursorShape: Qt.PointingHandCursor
+            MouseArea {
+                id: mouseMoon
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
 
-            onClicked: {
-                // Cambia el estado de moonData para activar la transición de escala
-                moonData.state = moonData.state === "clicked" ? "" : "clicked";
+                onClicked: {
+                    // Cambia el estado de moonData para activar la transición de escala
+                    moonData.state = moonData.state === "clicked" ? "" : "clicked";
+                }
             }
-        }
-        Rectangle {
-            width: (moonLabelIlu.width + 20) * parentContainer.scaleFactor // Ajusta el ancho del rectángulo según el texto
-            height: (moonLabelIlu.height + 6) * parentContainer.scaleFactor // Ajusta el alto del rectángulo según el texto
-            color: "lightgray"  // Color del fondo del rectángulo
-            radius: 2  // Opcional: si deseas esquinas redondeadas en el fondo del rectángulo
-            x: moonLabelIlu.x - 3 * parentContainer.scaleFactor // Ajusta la posición x del rectángulo según el texto
-            y: moonLabelIlu.y + 36 * parentContainer.scaleFactor // Ajusta la posición y del rectángulo según el texto
+            Rectangle {
+                width: ((moonLabelIlu.width + 20) * scaleFactor) * 0.3
+                height: ((moonLabelIlu.height + 16) * scaleFactor) * 0.3
+                color: "lightgray"  // Color del fondo del rectángulo
+                radius: 2
+                x: moonLabelIlu.x - 3 * scaleFactor
+                y: moonLabelIlu.y + 36 * scaleFactor
+            }
+        } // Image
+    } // Item
 
-            //---------------
-                // Content text
-        }
+//---------------
+        // Content text
+Item {
+    scale: 0.3
         Column {
             id: moonTexts
             x: 1 * scaleFactor
-            y: 35 * scaleFactor
+            y: 126 * scaleFactor
             z: 3
 
             opacity: moonData.state === "clicked" ? 1 : 0
@@ -56,13 +64,8 @@ Item {
 
             Text {
                 id: moonLabelIlu
-                x: 2 * parentContainer.scaleFactor
-                y: 0 * parentContainer.scaleFactor
                 color: "black"  // Color del texto
-                font.pixelSize: 4 * parentContainer.scaleFactor // Tamaño de la fuente
-                style: Text.Raised;  // Estilo del texto
-                styleColor: "white"  // Color del estilo del texto
-
+                font.pixelSize: 12 * scaleFactor // Tamaño de la fuente
                 text: {
                     var moonphaseText = "";
                     if (moonComponent.moonPhase !== undefined && moonComponent.moonPhase !== "") {
@@ -75,13 +78,8 @@ Item {
 
             Text {
                 id: moonDaysPhase
-                x: 2 * parentContainer.scaleFactor
-                y: 0 * parentContainer.scaleFactor
                 color: "black"
-                font.pixelSize: 4 * parentContainer.scaleFactor
-                style: Text.Raised;
-                styleColor: "white"
-
+                font.pixelSize: 12 * scaleFactor
                 text: {
                     var phaseText = moonComponent.daysPhase + i18n(" days for ");
                     if (moonComponent.nextPhase !== undefined && moonComponent.nextPhase !== "") {
@@ -91,7 +89,7 @@ Item {
                 }
             }
         } // Column
-    } // Image
+} //Item ---
 
     // Contenedor para los datos de la luna
     Item {
