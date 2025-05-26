@@ -16,9 +16,7 @@ Item {
         y: 2
         z: 2
         opacity: 1
-//        scale: moonData.state === "clicked" ? 3 : 0.5  // Reduce la escala cuando el estado es "clicked"
-//		source: "../moon/" + moonPhase + ".png"
-        source: "../moon/" + sanitizePhaseName(moonPhase) + ".png"
+        source: "../moon/" + sanitizePhaseName(moonComponent.moonPhase) + ".png"
 
         MouseArea {
             id: mouseMoon
@@ -32,11 +30,29 @@ Item {
         }
         Rectangle {
             width: (moonLabelIlu.width + 20) * parentContainer.scaleFactor // Ajusta el ancho del rectángulo según el texto
-            height: (moonLabelIlu.height + 2) * parentContainer.scaleFactor // Ajusta el alto del rectángulo según el texto
+            height: (moonLabelIlu.height + 6) * parentContainer.scaleFactor // Ajusta el alto del rectángulo según el texto
             color: "lightgray"  // Color del fondo del rectángulo
             radius: 2  // Opcional: si deseas esquinas redondeadas en el fondo del rectángulo
             x: moonLabelIlu.x - 3 * parentContainer.scaleFactor // Ajusta la posición x del rectángulo según el texto
             y: moonLabelIlu.y + 36 * parentContainer.scaleFactor // Ajusta la posición y del rectángulo según el texto
+
+            //---------------
+                // Content text
+        }
+        Column {
+            id: moonTexts
+            x: 1 * scaleFactor
+            y: 35 * scaleFactor
+            z: 3
+
+            opacity: moonData.state === "clicked" ? 1 : 0
+
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: 500
+                    easing.type: Easing.InOutQuad
+                }
+            }
 
             Text {
                 id: moonLabelIlu
@@ -46,16 +62,17 @@ Item {
                 font.pixelSize: 4 * parentContainer.scaleFactor // Tamaño de la fuente
                 style: Text.Raised;  // Estilo del texto
                 styleColor: "white"  // Color del estilo del texto
-                text: i18n(moonPhase) + i18n(" Lightning: ") + percentIlu + "%"
+
+                text: {
+                    var moonphaseText = "";
+                    if (moonComponent.moonPhase !== undefined && moonComponent.moonPhase !== "") {
+                        moonphaseText += i18n(moonComponent.moonPhase);
+                    }
+                    return moonphaseText + "; " + i18n(" Lightning: ") + moonComponent.percentIlu + "%";
+                }
             }
-        }
-        Rectangle {
-            width: (moonDaysPhase.width + 20) * parentContainer.scaleFactor
-            height: (moonDaysPhase.height + 2) * parentContainer.scaleFactor
-            color: "lightgray"  // Color del fondo del rectángulo
-            radius: 2  // Opcional: si deseas esquinas redondeadas en el fondo del rectángulo
-            x: moonLabelIlu.x - 3 * parentContainer.scaleFactor // Ajusta la posición x del rectángulo según el texto
-            y: moonLabelIlu.y + 46 * parentContainer.scaleFactor // Ajusta la posición y del rectángulo según el texto
+
+
             Text {
                 id: moonDaysPhase
                 x: 2 * parentContainer.scaleFactor
@@ -64,10 +81,17 @@ Item {
                 font.pixelSize: 4 * parentContainer.scaleFactor
                 style: Text.Raised;
                 styleColor: "white"
-                text: daysPhase + i18n(" days for ") + i18n(nextPhase)
+
+                text: {
+                    var phaseText = moonComponent.daysPhase + i18n(" days for ");
+                    if (moonComponent.nextPhase !== undefined && moonComponent.nextPhase !== "") {
+                        phaseText += i18n(moonComponent.nextPhase);
+                    }
+                    return phaseText;
+                }
             }
-        }
-    }
+        } // Column
+    } // Image
 
     // Contenedor para los datos de la luna
     Item {
@@ -98,7 +122,7 @@ Item {
                 NumberAnimation { properties: "x, y "; duration: 2000 }
             }
         ]
-    }
+    } // Item
 
 //-------------------------
 
