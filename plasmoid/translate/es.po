@@ -170,8 +170,8 @@ msgstr "Creciente"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Waxing Crescent"
-msgstr "Media Luna creciente"
+msgstr "Media Luna menguante"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Waxing Gibbous"
-msgstr "Media Luna menguante"
+msgstr "Media Luna creciente"
