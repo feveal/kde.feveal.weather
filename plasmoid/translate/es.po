@@ -162,11 +162,11 @@ msgstr "Cuarto menguante"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Waning Crescent"
-msgstr "Menguante"
+msgstr "Creciente"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Waning Gibbous"
-msgstr "Creciente"
+msgstr "Menguante"
 
 #: ../contents/ui/moon/Moon.qml
 msgid "Waxing Crescent"
